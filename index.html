@@ -7,70 +7,62 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a13b018dba.js" crossorigin="anonymous"></script>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-    body { background: #ffffff; color: #333; line-height: 1.6; scroll-behavior: smooth; }
-    
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat', sans-serif; }
+    body { background:#ffffff; color:#333; line-height:1.6; scroll-behavior:smooth; }
+
     header {
-      background: #0077B5; color: white; padding: 20px 50px;
-      position: fixed; width: 100%; top: 0; display: flex;
-      justify-content: space-between; align-items: center; z-index: 1000;
+      background:#0077B5; color:white; padding:20px 50px;
+      position:fixed; width:100%; top:0; display:flex;
+      justify-content:space-between; align-items:center; z-index:1000;
     }
-    header h1 { font-size: 24px; font-weight: 800; }
-    nav a { color: white; margin-left: 20px; text-decoration: none; font-weight: 600; }
-    nav a:hover { color: #ED820E; }
+    header h1 { font-size:24px; font-weight:800; }
+    nav a { color:white; margin-left:20px; text-decoration:none; font-weight:600; }
+    nav a:hover { color:#ED820E; }
 
-    section { padding: 100px 60px; min-height: 100vh; }
+    section { padding:100px 60px; min-height:100vh; }
+    .home { display:flex; align-items:center; justify-content:space-between; gap:40px; }
+    .home img { width:250px; height:350px; border-radius:50%; object-fit:cover; box-shadow:0px 4px 15px rgba(0,0,0,0.2); }
 
-    .home { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
-    .home img {
-      width: 250px; height: 350px; border-radius: 50%; object-fit: cover;
-      box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
-    }
-    
-    .btn {
-      display: inline-block; margin-top: 20px; padding: 12px 25px;
-      background: #ED820E; color: white; border-radius: 30px;
-      font-weight: 600; text-decoration: none; transition: 0.3s; cursor: pointer;
-    }
-    .btn:hover { background: #0077B5; }
+    .btn { display:inline-block; margin-top:20px; padding:12px 25px;
+           background:#ED820E; color:white; border-radius:30px;
+           font-weight:600; text-decoration:none; transition:0.3s; cursor:pointer; }
+    .btn:hover { background:#0077B5; }
 
-    h2 { font-size: 40px; margin-bottom: 30px; color: #0077B5; }
-    h2 span { color: #ED820E; }
+    h2 { font-size:40px; margin-bottom:30px; color:#0077B5; }
+    h2 span { color:#ED820E; }
 
-    /* Grids */
-    .skills, .certifications, .internships, .achievements { display: grid; gap: 20px; }
-    .skills { grid-template-columns: repeat(3, 1fr); }
-    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .certifications { grid-template-columns: repeat(3, 1fr); }
+    .skills, .certifications, .internships, .achievements { display:grid; gap:20px; }
+    .skills { grid-template-columns:repeat(3,1fr); }
+    .projects-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    .certifications { grid-template-columns:repeat(3,1fr); }
 
     .card {
-      background: #f9f9f9; padding: 20px; border-radius: 12px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1); transition: 0.3s;
-      text-align: center;
+      background:#f9f9f9; padding:20px; border-radius:12px;
+      box-shadow:0 3px 8px rgba(0,0,0,0.1); transition:0.3s;
+      text-align:center;
     }
-    .card:hover { transform: translateY(-5px); }
-    .card h3 { margin-bottom: 10px; color: #ED820E; }
-    .card img { max-width: 120px; margin-bottom: 15px; }
+    .card:hover { transform:translateY(-5px); }
+    .card h3 { margin-bottom:10px; color:#ED820E; }
+    .card img { max-width:120px; margin-bottom:15px; }
 
-    .progress-bar { background: #ddd; border-radius: 20px; overflow: hidden; margin-top: 10px; }
-    .progress { height: 12px; background: #0077B5; }
+    .progress-bar { background:#ddd; border-radius:20px; overflow:hidden; margin-top:10px; }
+    .progress { height:12px; background:#0077B5; }
 
-    form { max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
-    input, textarea { padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; width: 100%; }
+    form { max-width:600px; margin:auto; display:flex; flex-direction:column; gap:15px; }
+    input, textarea { padding:12px; border:1px solid #ccc; border-radius:8px; font-size:16px; width:100%; }
 
-    footer { text-align: center; padding: 20px; background: #0077B5; color: white; }
-    .socials a { color: white; margin: 0 10px; font-size: 22px; }
-    .socials a:hover { color: #ED820E; }
+    footer { text-align:center; padding:20px; background:#0077B5; color:white; }
+    .socials a { color:white; margin:0 10px; font-size:22px; }
+    .socials a:hover { color:#ED820E; }
 
-    /* Responsive grids */
-    @media (max-width: 900px) { .skills { grid-template-columns: repeat(2, 1fr); } .projects-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 600px) { .skills { grid-template-columns: 1fr; } }
+    @media(max-width:900px) { .skills { grid-template-columns:repeat(2,1fr); } .projects-grid { grid-template-columns:1fr; } }
+    @media(max-width:600px) { .skills { grid-template-columns:1fr; } }
 
-    /* PDF Modal */
     #pdfPreview { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:2000; }
     #pdfPreview div { position:relative; width:80%; height:90%; margin:5% auto; background:white; border-radius:12px; overflow:hidden; }
     #pdfPreview iframe { width:100%; height:100%; border:none; }
     #pdfPreview button { position:absolute; top:10px; right:10px; padding:10px 15px; background:#ED820E; color:white; border:none; border-radius:5px; cursor:pointer; }
+
   </style>
 </head>
 <body>
@@ -90,24 +82,28 @@
   </nav>
 </header>
 
+<!-- Home Section -->
 <section id="home" class="home">
   <div>
-    <h2>Hello, I'm <span>Hema Nagalla</span></h2>
-    <p>A B.Tech student in Artificial Intelligence & Machine Learning passionate about solving real-world problems with AI-powered solutions.</p>
-    
-    <!-- Resume Buttons -->
-    <div style="margin-top: 20px;">
+    <h2 style="font-size:3rem; font-weight:700; line-height:1.2;">
+      Hello, I'm <span id="typing-name" style="font-size:3.5rem; font-weight:900; color:#ED820E;"></span>
+    </h2>
+    <p class="tagline" style="font-size:1.5rem; font-weight:500; margin-top:15px;">
+      AI & ML Enthusiast | Building Data-Driven Full Stack Solutions
+    </p>
+
+    <div>
       <a href="Hema_AI_ML_Resume.docx" class="btn" download>Download Resume</a>
-      <a href="#" class="btn" style="background: #333;" onclick="document.getElementById('pdfPreview').style.display='block'">Preview Resume</a>
+      <a href="#" class="btn" style="background:#333;" onclick="document.getElementById('pdfPreview').style.display='block'">Preview Resume</a>
     </div>
 
-    <!-- Social Links -->
     <div class="social-links" style="margin-top:20px;">
       <a href="https://github.com/hema-41" target="_blank" style="color:#333;"><i class="fab fa-github"></i></a>
       <a href="https://linkedin.com/in/hema-nagalla-2432b527a" target="_blank" style="color:#0077B5;"><i class="fab fa-linkedin"></i></a>
     </div>
   </div>
-  <img src="img/profile.jpg" alt="Hema Profile Picture">
+
+  <img src="img/profile.jpg" alt="Hema Nagalla Profile Picture">
 </section>
 
 <!-- PDF Preview Modal -->
@@ -118,11 +114,13 @@
   </div>
 </div>
 
+<!-- About Section -->
 <section id="about">
   <h2>About <span>Me</span></h2>
   <p>I’m an enthusiastic B.Tech student in Artificial Intelligence & Machine Learning, passionate about building AI-powered solutions that solve real-world problems. I enjoy exploring data, creating intelligent models, and turning ideas into impactful projects. My journey includes being part of the Amazon ML Summer School 2025 and Infosys Pragati Cohort 5 (Data Science Path), where I gained deeper exposure to AI concepts, hands-on practices, and teamwork. Known for my strong leadership skills, I enjoy guiding projects, collaborating with peers, and ensuring successful outcomes. With a solid foundation in Python, machine learning, and data visualization, I’m eager to contribute to innovative AI projects while learning and growing as an AI engineer.</p>
 </section>
 
+<!-- Skills Section -->
 <section id="skills">
   <h2>My <span>Skills</span></h2>
   <div class="skills">
@@ -138,6 +136,7 @@
   </div>
 </section>
 
+<!-- Education Section -->
 <section id="education">
   <h2>My <span>Education</span></h2>
   <div class="card"><h3>B.Tech AIML</h3><p>Bonam Venkata Chalamayya Engineering College, 2022–2026<br>CGPA: 8.3</p></div>
@@ -145,6 +144,7 @@
   <div class="card"><h3>10th</h3><p>Sarada Convent High School, Amalapuram – 99%</p></div>
 </section>
 
+<!-- Projects Section -->
 <section id="projects">
   <h2>My <span>Projects</span></h2>
   <div class="projects-grid">
@@ -159,6 +159,7 @@
   </div>
 </section>
 
+<!-- Certifications Section -->
 <section id="certifications">
   <h2>My <span>Certifications</span></h2>
   <div class="certifications">
@@ -197,23 +198,39 @@
   </div>
 </section>
 
+<!-- Contact Section -->
 <section id="contact">
   <h2>Contact <span>Me</span></h2>
-  <form action="mailto:nagallahema2004@gmail.com" method="post" enctype="text/plain">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-    <button type="submit" class="btn">Send Message</button>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="6" placeholder="Your Message" required></textarea>
+    <button class="btn" type="submit">Send Message</button>
   </form>
 </section>
 
 <footer>
-  <p>© 2025 Hema Nagalla | Built with ❤️</p>
+  <p>Connect with me:</p>
   <div class="socials">
     <a href="https://github.com/hema-41" target="_blank"><i class="fab fa-github"></i></a>
     <a href="https://linkedin.com/in/hema-nagalla-2432b527a" target="_blank"><i class="fab fa-linkedin"></i></a>
   </div>
+  <p>© 2025 Hema Nagalla</p>
 </footer>
+
+<!-- Typing Animation Script -->
+<script>
+  const name = "Hema Nagalla";
+  let i = 0;
+  function typeWriter() {
+    if (i < name.length) {
+      document.getElementById("typing-name").innerHTML += name.charAt(i);
+      i++;
+      setTimeout(typeWriter, 150);
+    }
+  }
+  typeWriter();
+</script>
 
 </body>
 </html>
